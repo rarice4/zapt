@@ -3,11 +3,14 @@
 var express = require('express');
 var router = require('./api');
 var parser = require('body-parser');
-var authSecret = require('authSecret');
+var mongoose = require("mongoose");
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var authSecret = require('./authSecret');
 var app = express();
 
 require('./database');
-require('./seed');
+//require('./seed');
 app.use("/",express.static('public'));
 
 var db = mongoose.connection;

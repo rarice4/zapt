@@ -3,5 +3,9 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/zapt',{useMongoClient: true}, (err)=>{
-  console.log(" Database ERRRR!!!!", err);
+  if(err){
+    console.log(" Database ERRRR!!!!", err)
+  }else{
+    console.log("connected to mongo");
+  }
 });
