@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/public/scripts',
-        filename: 'todo.bundle.js'
+        filename: 'zapt.bundle.js'
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor.bundle.js" })

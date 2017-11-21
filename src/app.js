@@ -39,7 +39,7 @@ app.set('views', __dirname + '/public');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 //set outer template
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
             res.render('../../public/index.html'); // load our public/index.html file
         });
 
