@@ -35,6 +35,14 @@ app.use(function(req,res,next){
 app.use(parser.json());
 app.use("/api", router);
 
+app.set('views', __dirname + '/public');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+//set outer template
+app.get('*', function(req, res) {
+            res.render('../../public/index.html'); // load our public/index.html file
+        });
+
 app.listen(3000, ()=>{
-  console.log("Running");
+  console.log("Running on port 3000");
 })
